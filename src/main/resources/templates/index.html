@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="Keywords" content="程序员网站导航_程序员导航_程序员必备_导航">
+<meta name="description" content="程序员网站导航_程序员导航_程序员必备_导航">
+<title>导航</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+<link rel="stylesheet" type="text/css" href="../static/css/home.css" th:href="@{/css/home.css}">
+</head>
+<style type="text/css" id="312665000"></style>
+
+<script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script src="../static/js/layer/layer.js" th:src="@{/js/layer/layer.js}"></script>
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+
+
+
+<body class="shortcut-fixed" style="zoom: 1;">
+<div id="header">
+  <div class="wrapper">
+    <header>
+    <a href="#" title="导航"><h1 id="logo"></h1></a>
+    </header>
+      <!--搜索-->
+    <div id="search">
+
+     <form  target="_blank">
+        <input id="soInput" type="text" onkeydown="calAge(event)"   class="keyword default-word" name="wd" oninput="inputVal = this.value" >
+         <input id="so" type="button" value="百度一下" onclick="start()" name="baidu" class="button">
+         <select class="but2" id="select_s" onchange="changeForm(this.value)">
+             <option value="0"></option>
+             <option value="0">百度</option>
+             <option value="1">github</option>
+             <option value="2">京东搜索</option>
+             <option value="3">淘宝搜索</option>
+             <option value="4">当当图书</option>
+             <option value="5">哔哩哔哩</option>
+             <option value="6">快手搜索</option>
+             <option value="7">腾讯视频</option>
+             <option value="8">爱奇艺</option>
+             <option value="9">芒果tv</option>
+             <option value="10">小说搜索</option>
+             <option value="11">漫画搜索</option>
+             <option value="12">微信文章</option>
+             <option value="13">知乎文章</option>
+             <option value="14">CSDN文章</option>
+             <option value="15">CSDN文件</option>
+         </select>
+      </form>
+
+    </div>
+    <div class="tools"> <a href="https://translate.google.cn/" class="icon-translate" title="谷歌网页翻译工具" target="_blank">翻译工具</a> <a href="#" class="icon-add" title="联系我们">联系我们</a> <a href="#" class="icon-favor" title="加入收藏">按Ctrl+D收藏导航</a></div>
+  </div>
+</div>
+
+<div id="content">
+    <div class="guide">
+        <div class="wrapper">
+            <nav class="site-list">
+            </nav>
+            <section class="estab">
+
+            </section>
+        </div>
+    </div>
+  <div class="wrapper">
+    <div id="catalog">
+      <section class="active" th:each="typelink:${typelinks}">
+        <header>
+          <h2 class="icon-download" th:text="${typelink.name}" ></h2>
+        </header>
+        <ul class="website-list"  >
+            <div th:each="link:${typelink.links}" th:switch="${link.icon}">
+                <div th:case="1">
+                  <li class="hot-item hot-item1"> <a th:href="@{link.content}" class="website" target="_blank" th:text="${link.title}">GitHub</a>
+                    <p class="description" th:text="${link.description}">GitHub 是一个面向开源及私有软件项目的托管平台</p>
+                  </li>
+                </div>
+                <div th:case="2">
+                    <li class="hot-item hot-item2"> <a th:href="@{link.content}" class="website" target="_blank" th:text="${link.title}">GitHub</a>
+                        <p class="description" th:text="${link.description}">GitHub 是一个面向开源及私有软件项目的托管平台</p>
+                    </li>
+                </div>
+                <div th:case="3">
+                    <li class="hot-item hot-item3"> <a th:href="@{link.content}" class="website" target="_blank" th:text="${link.title}">GitHub</a>
+                        <p class="description" th:text="${link.description}">GitHub 是一个面向开源及私有软件项目的托管平台</p>
+                    </li>
+                </div>
+                <div th:case="4">
+                    <li class="hot-item hot-item4"> <a th:href="@{link.content}" class="website" target="_blank" th:text="${link.title}">GitHub</a>
+                        <p class="description" th:text="${link.description}">GitHub 是一个面向开源及私有软件项目的托管平台</p>
+                    </li>
+                </div>
+                <div th:case="5">
+                    <li class="hot-item hot-item5"> <a th:href="@{link.content}" class="website" target="_blank" th:text="${link.title}">GitHub</a>
+                        <p class="description" th:text="${link.description}">GitHub 是一个面向开源及私有软件项目的托管平台</p>
+                    </li>
+                </div>
+            </div>
+        </ul>
+
+      </section>
+    </div>
+    <div class="tips">
+
+
+    </div>
+
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="wrapper">
+    <nav id="nav"><a href="#" target="_blank" title="工信部">&copy;京ICP备16055492号-7</a><a href="#" target="_blank">友情链接：</a>&nbsp;&nbsp;<a href="#" target="_blank">UI设计导航</a>&nbsp;&nbsp;<a href="#" target="_blank">luckyfirst.com</a></nav>
+  </div>
+</footer>
+
+
+</body>
+</html>
